@@ -1,0 +1,25 @@
+{:paths ["resources" "src"]
+ :deps {
+        org.clojure/clojure {:mvn/version "RELEASE"}
+        metosin/jsonista {:mvn/version "RELEASE"}
+        metosin/malli {:mvn/version "RELEASE"}
+        metosin/muuntaja {:mvn/version "RELEASE"}
+        metosin/reitit {:mvn/version "RELEASE"}
+        ring/ring-jetty-adapter {:mvn/version "RELEASE"}}
+
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "RELEASE"}}}
+
+  :gen {:extra-deps {libdev/clj-template {:mvn/version "RELEASE"}}
+        :main-opts ["-m" "clj-new.generate"]}
+
+  :runner
+  {:extra-deps {com.cognitect/test-runner
+                {:git/url "https://github.com/cognitect-labs/test-runner"
+                 :sha "76568540e7f40268ad2b646110f237a60295fa3c"}}
+   :main-opts ["-m" "cognitect.test-runner"
+               "-d" "test"]}
+  :uberjar {:extra-deps {seancorfield/depstar {:mvn/version "1.1.128"}}
+            :main-opts ["-m" "hf.depstar.uberjar" "http-service.jar"
+                        "-C" "-m" "voxdolo.http-service"]}}}
