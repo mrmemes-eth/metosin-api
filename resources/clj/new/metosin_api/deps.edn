@@ -21,5 +21,5 @@
    :main-opts ["-m" "cognitect.test-runner"
                "-d" "test"]}
   :uberjar {:extra-deps {seancorfield/depstar {:mvn/version "1.1.128"}}
-            :main-opts ["-m" "hf.depstar.uberjar" "http-service.jar"
-                        "-C" "-m" "voxdolo.http-service"]}}}
+            :main-opts ["-m" "hf.depstar.uberjar" "{{name}}.jar"
+                        "-C" "-m" "{{namespace}}"]}}}
