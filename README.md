@@ -20,7 +20,7 @@ setup a `:new` alias you can make use of this template by running
 the command:
 
 ```
-clj -X:new create :template metosin-api :name package-name/app-name
+clj -X:new :template metosin-api :name package-name/app-name
 Generating a project called http-service based on the "metosin-api" template.
 ```
 
@@ -42,7 +42,7 @@ mylibname/
 
 ## Development
 
-If you're working on libdev itself you can have it generate a new
+If you're working on the lib itself you can have it generate a new
 template from the project root directory with the command:
 
 Run: `clj -m clj-new.create metosin-api myname/mynewlib` to test
